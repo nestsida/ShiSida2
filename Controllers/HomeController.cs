@@ -33,5 +33,12 @@ namespace ShiSida_Engineering.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        public IActionResult Welcome(string name, int ID = 1)
+        {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["ID"] = ID;
+
+            return View();
+        }
     }
 }
